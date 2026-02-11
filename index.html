@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Edith | Registros Akáshicos</title>
+  <meta name="description" content="Registros Akáshicos: claridad, guía y evolución. Consultas por WhatsApp o Instagram." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Edith | Registros Akáshicos" />
+  <meta property="og:description" content="Registros Akáshicos: claridad, guía y evolución. Consultas por WhatsApp o Instagram." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://iili.io/fyeDJ1I.jpg" />
+  <meta property="og:locale" content="es_AR" />
+
+  <meta name="theme-color" content="#0b0b10" />
+
+  <style>
+    :root{
+      --max: 1120px;
+      --pad: 18px;
+      --radius: 22px;
+
+      --txt: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.74);
+
+      --glass-bg: rgba(18, 20, 28, .46);
+      --glass-stroke: rgba(255,255,255,.14);
+      --shadow: 0 16px 60px rgba(0,0,0,.45);
+
+      --btn: rgba(255,255,255,.10);
+      --btn-stroke: rgba(255,255,255,.18);
+      --btn-hover: rgba(255,255,255,.16);
+
+      --focus: rgba(255,255,255,.35);
+    }
+
+    *{ box-sizing:border-box; }
+    html, body { height:100%; }
+    body{
+      margin:0;
+      color: var(--txt);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      background: #07070b;
+      background-image: url("https://iili.io/fyeDJ1I.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    a{ color: inherit; text-decoration:none; }
+    .wrap{
+      width: min(var(--max), calc(100% - (var(--pad) * 2)));
+      margin: 0 auto;
+    }
+
+    /* Text contrast without dimming the overlay */
+    .contrast{
+      text-shadow:
+        0 1px 0 rgba(0,0,0,.65),
+        0 6px 22px rgba(0,0,0,.55);
+    }
+
+    /* Header */
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 0;
+    }
+    .header-bar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(10, 10, 16, .34);
+      border: 1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 12px 50px rgba(0,0,0,.25);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .brand-badge{
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+    }
+    .brand-badge svg{ width: 18px; height: 18px; opacity:.95; }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+      min-width: 0;
+    }
+    .brand-text strong{
+      font-size: 14px;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand-text span{
+      font-size: 12px;
+      color: var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex: 0 0 auto;
+    }
+
+    .icon-btn{
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      background: var(--btn);
+      border: 1px solid var(--btn-stroke);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
+    }
+    .icon-btn:hover{
+      background: var(--btn-hover);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.24);
+    }
+    .icon-btn:focus-visible{
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+    .icon-btn svg{ width: 18px; height: 18px; }
+
+    .cta{
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.20);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing:.2px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      white-space: nowrap;
+    }
+    .cta:hover{
+      background: rgba(255,255,255,.18);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.28);
+    }
+    .cta:focus-visible{
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    /* Hero */
+    main{ padding: 18px 0 46px; }
+    .hero{
+      margin-top: 14px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .panel{
+      border-radius: var(--radius);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-stroke);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-left{
+      padding: 26px 24px;
+      position: relative;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .kicker svg{ width: 14px; height:14px; opacity:.9; }
+
+    h1{
+      margin: 16px 0 10px;
+      font-size: clamp(30px, 4.2vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.6px;
+    }
+    .sub{
+      margin: 0;
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: rgba(255,255,255,.82);
+      max-width: 62ch;
+    }
+
+    .hero-actions{
+      margin-top: 18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.20);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      font-weight: 800;
+      font-size: 13px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      min-height: 44px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,.18);
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.28);
+    }
+    .btn:focus-visible{
+      outline: 2px solid var(--focus);
+      outline-offset: 3px;
+    }
+    .btn svg{ width: 18px; height: 18px; }
+
+    .btn.secondary{
+      background: rgba(10,10,16,.28);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .btn.secondary:hover{
+      background: rgba(10,10,16,.38);
+      border-color: rgba(255,255,255,.22);
+    }
+
+    .hero-right{
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .mini{
+      padding: 14px 14px;
+      border-radius: 18px;
+      background: rgba(0,0,0,.22);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .mini strong{
+      display:block;
+      font-size: 13px;
+      letter-spacing:.2px;
+      margin-bottom: 6px;
+    }
+    .mini span{
+      display:block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    /* Sections */
+    .grid{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .section{
+      margin-top: 18px;
+    }
+    .section-title{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .section-desc{
+      margin: 0 0 14px;
+      color: rgba(255,255,255,.80);
+      line-height: 1.6;
+      font-size: 14px;
+      max-width: 72ch;
+    }
+
+    .card{
+      padding: 16px 16px;
+      border-radius: 18px;
+      background: rgba(18, 20, 28, .42);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+      min-height: 110px;
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing: -.2px;
+    }
+    .card p{
+      margin: 0;
+      color: rgba(255,255,255,.80);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .col-4{ grid-column: span 4; }
+    .col-6{ grid-column: span 6; }
+    .col-12{ grid-column: span 12; }
+
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .step{
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(10,10,16,.22);
+      border: 1px solid rgba(255,255,255,.12);
+      min-height: 120px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.16);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .step strong{
+      display:block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+    .step span{
+      display:block;
+      color: rgba(255,255,255,.80);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .cta-panel{
+      padding: 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    .cta-panel .left{
+      min-width: 240px;
+    }
+    .cta-panel h2{
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .cta-panel p{
+      margin: 0;
+      color: rgba(255,255,255,.80);
+      line-height: 1.6;
+      font-size: 13.8px;
+      max-width: 70ch;
+    }
+
+    /* Floating WhatsApp */
+    .fab{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      display:grid;
+      place-items:center;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .fab:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.18);
+    }
+    .fab svg{ width: 22px; height: 22px; }
+
+    /* Footer */
+    footer{
+      padding: 26px 0 90px; /* space for FAB so it never covers footer */
+    }
+    .footer-bar{
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(10,10,16,.28);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 12px;
+      flex-wrap:wrap;
+    }
+    .footer-bar small{
+      color: rgba(255,255,255,.76);
+      line-height: 1.4;
+    }
+    .credit a{
+      font-weight: 800;
+      border-bottom: 1px solid rgba(255,255,255,.28);
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+      .hero-right{ padding: 16px; }
+      .steps{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px){
+      header{ padding: 10px 0; }
+      .header-bar{ padding: 10px 10px; }
+      .cta{ display:none; }
+      .grid{ gap: 12px; }
+      .col-4, .col-6{ grid-column: span 12; }
+      .hero-left{ padding: 22px 18px; }
+      .hero-actions{ gap: 10px; }
+      .btn{ width: 100%; justify-content:center; }
+      .fab{ right: 14px; bottom: 14px; }
+      footer{ padding-bottom: 96px; }
+    }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ transition: none !important; scroll-behavior:auto !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="header-bar">
+        <div class="brand">
+          <div class="brand-badge" aria-hidden="true">
+            <!-- Spark icon -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2l1.2 6.2L20 12l-6.8 3.8L12 22l-1.2-6.2L4 12l6.8-3.8L12 2z" stroke="currentColor" stroke-width="1.6" />
+            </svg>
+          </div>
+          <div class="brand-text contrast">
+            <strong>Edith</strong>
+            <span>@akashicos.emdm</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <a class="icon-btn" href="https://instagram.com/akashicos.emdm" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- Instagram (official-style simple) -->
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7.5 2.8h9A4.7 4.7 0 0 1 21.2 7.5v9a4.7 4.7 0 0 1-4.7 4.7h-9a4.7 4.7 0 0 1-4.7-4.7v-9A4.7 4.7 0 0 1 7.5 2.8Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M17.3 6.7h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+            </svg>
+          </a>
+
+          <a class="icon-btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener" aria-label="WhatsApp">
+            <!-- WhatsApp (Bootstrap bi-whatsapp) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
+            </svg>
+          </a>
+
+          <a class="cta" href="#contacto">Consultar</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero">
+        <div class="panel hero-left">
+          <div class="kicker contrast">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3l2.2 6.7H21l-5.6 4.1L17.6 21 12 16.9 6.4 21l2.2-7.2L3 9.7h6.8L12 3z" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+            Lecturas 1:1 | Online
+          </div>
+
+          <h1 class="contrast">Registros Akáshicos</h1>
+          <p class="sub contrast">
+            Los Registros Akáshicos te informan lo que tu alma necesita saber para tu mayor bien y evolución.
+            Si querés claridad y guía, escribime y coordinamos.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20una%20lectura%20de%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
+              </svg>
+              Quiero una lectura
+            </a>
+
+            <a class="btn secondary" href="#proceso">
+              Ver cómo es
+            </a>
+
+            <a class="btn secondary" href="https://instagram.com/akashicos.emdm" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7.5 2.8h9A4.7 4.7 0 0 1 21.2 7.5v9a4.7 4.7 0 0 1-4.7 4.7h-9a4.7 4.7 0 0 1-4.7-4.7v-9A4.7 4.7 0 0 1 7.5 2.8Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M17.3 6.7h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+              </svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+
+        <aside class="panel hero-right">
+          <div class="mini contrast">
+            <strong>Enfoque</strong>
+            <span>Claridad, guía y evolución personal. Lectura confidencial y directa.</span>
+          </div>
+          <div class="mini contrast">
+            <strong>Modalidad</strong>
+            <span>Online. Coordinamos por mensaje y te explico el paso a paso.</span>
+          </div>
+          <div class="mini contrast">
+            <strong>Consulta</strong>
+            <span>Escribime por WhatsApp o Instagram y vemos disponibilidad.</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section panel" style="margin-top:18px; padding:20px;">
+        <h2 class="section-title contrast">¿Para quién es?</h2>
+        <p class="section-desc contrast">Si estás en un momento de cambio o necesitás una guía clara para tomar decisiones con más tranquilidad.</p>
+
+        <div class="grid">
+          <div class="card col-4">
+            <h3 class="contrast">Decisiones</h3>
+            <p class="contrast">Cuando estás entre opciones y querés claridad para elegir.</p>
+          </div>
+          <div class="card col-4">
+            <h3 class="contrast">Patrones</h3>
+            <p class="contrast">Si sentís que repetís situaciones y querés entender el mensaje de fondo.</p>
+          </div>
+          <div class="card col-4">
+            <h3 class="contrast">Dirección</h3>
+            <p class="contrast">Para ordenar mente y emociones, y avanzar con más seguridad.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="proceso" class="section panel" style="margin-top:18px; padding:20px;">
+        <h2 class="section-title contrast">Cómo es el proceso</h2>
+        <p class="section-desc contrast">Simple, claro y sin vueltas: coordinamos, enfocamos tu consulta y hacemos la lectura.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="pill">1</div>
+            <strong class="contrast">Me escribís</strong>
+            <span class="contrast">Por WhatsApp o Instagram y coordinamos disponibilidad.</span>
+          </div>
+          <div class="step">
+            <div class="pill">2</div>
+            <strong class="contrast">Enfocamos tu tema</strong>
+            <span class="contrast">Te hago unas preguntas cortas para guiar la lectura.</span>
+          </div>
+          <div class="step">
+            <div class="pill">3</div>
+            <strong class="contrast">Lectura + devolución</strong>
+            <span class="contrast">Recibís la información y un cierre para que puedas avanzar.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section panel" style="margin-top:18px; padding:20px;">
+        <h2 class="section-title contrast">Lo que te llevás</h2>
+        <p class="section-desc contrast">Una lectura pensada para tu mayor bien, con enfoque en lo práctico: claridad y dirección para actuar.</p>
+
+        <div class="grid">
+          <div class="card col-6">
+            <h3 class="contrast">Claridad</h3>
+            <p class="contrast">Entender el “para qué” de lo que estás viviendo y qué te pide tu proceso.</p>
+          </div>
+          <div class="card col-6">
+            <h3 class="contrast">Calma y orden</h3>
+            <p class="contrast">Bajar el ruido mental y tomar decisiones con más tranquilidad.</p>
+          </div>
+          <div class="card col-12">
+            <h3 class="contrast">Dirección</h3>
+            <p class="contrast">Pasos concretos para avanzar: qué soltar, qué sostener y qué priorizar.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="section panel cta-panel" style="margin-top:18px;">
+        <div class="left">
+          <h2 class="contrast">¿Querés consultar?</h2>
+          <p class="contrast">Escribime por WhatsApp o Instagram. Te digo disponibilidad y coordinamos.</p>
+        </div>
+        <div class="right" style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
+            </svg>
+            WhatsApp
+          </a>
+
+          <a class="btn secondary" href="https://instagram.com/akashicos.emdm" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7.5 2.8h9A4.7 4.7 0 0 1 21.2 7.5v9a4.7 4.7 0 0 1-4.7 4.7h-9a4.7 4.7 0 0 1-4.7-4.7v-9A4.7 4.7 0 0 1 7.5 2.8Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M17.3 6.7h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+            </svg>
+            Instagram
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-bar">
+          <small class="contrast">© <span id="year"></span> Edith | Registros Akáshicos</small>
+          <small class="credit contrast">
+            Creado y diseñado por <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener">Ciborg 347</a>
+          </small>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <a class="fab" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Smooth scroll for internal anchors
+    document.addEventListener("click", function(e){
+      const a = e.target.closest('a[href^="#"]');
+      if(!a) return;
+      const id = a.getAttribute("href");
+      if(id.length < 2) return;
+      const el = document.querySelector(id);
+      if(!el) return;
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, { passive: false });
+  </script>
+</body>
+</html>
