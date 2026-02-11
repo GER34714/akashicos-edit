@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Edith | Registros Akáshicos</title>
-  <meta name="description" content="Registros Akáshicos: claridad, guía y evolución. Consultas por WhatsApp o Instagram." />
+  <meta name="description" content="Registros Akáshicos: claridad, guia y evolucion. Consultas por WhatsApp o Instagram." />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Edith | Registros Akáshicos" />
-  <meta property="og:description" content="Registros Akáshicos: claridad, guía y evolución. Consultas por WhatsApp o Instagram." />
+  <meta property="og:description" content="Registros Akáshicos: claridad, guia y evolucion. Consultas por WhatsApp o Instagram." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://iili.io/fykaO4j.png" />
   <meta property="og:locale" content="es_AR" />
@@ -58,8 +58,8 @@
 
     .contrast{
       text-shadow:
-        0 1px 0 rgba(0,0,0,.68),
-        0 10px 26px rgba(0,0,0,.58);
+        0 1px 0 rgba(0,0,0,.70),
+        0 10px 26px rgba(0,0,0,.60);
     }
 
     header{
@@ -100,8 +100,9 @@
     .brand-logo img{
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display:block;
+      background: rgba(0,0,0,.10);
     }
     .brand-text{
       display:flex;
@@ -190,42 +191,17 @@
 
     main{ padding: 18px 0 46px; }
 
+    /* HERO */
     .hero{
       margin-top: 14px;
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
+      grid-template-columns: 1.05fr .95fr;
       gap: 18px;
       align-items: stretch;
     }
-
     .hero-left{
       padding: 24px 22px;
       position: relative;
-    }
-
-    .hero-top{
-      display:flex;
-      gap: 16px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    /* HERO IMAGE BIGGER (esto es lo que pediste) */
-    .hero-avatar{
-      width: 104px;
-      height: 104px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 18px 60px rgba(0,0,0,.40);
-      overflow:hidden;
-      flex: 0 0 auto;
-    }
-    .hero-avatar img{
-      width:100%;
-      height:100%;
-      object-fit: cover;
-      display:block;
     }
 
     .kicker{
@@ -252,7 +228,7 @@
       font-size: 15.5px;
       line-height: 1.6;
       color: rgba(255,255,255,.84);
-      max-width: 70ch;
+      max-width: 72ch;
     }
 
     .hero-actions{
@@ -300,11 +276,71 @@
       border-color: rgba(255,255,255,.22);
     }
 
-    .hero-right{
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.86);
+      font-size: 12.5px;
+      line-height: 1;
+    }
+    .chip svg{ width: 15px; height: 15px; opacity:.9; }
+
+    /* HERO IMAGE (GRANDE Y SIN RECORTE) */
+    .hero-media{
       padding: 18px;
       display:flex;
       flex-direction:column;
       gap: 12px;
+    }
+    .hero-image-box{
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      overflow:hidden;
+      position: relative;
+      min-height: 420px;
+      display:grid;
+      place-items:center;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+    .hero-image-box::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(60% 80% at 50% 35%, rgba(255,255,255,.12), rgba(0,0,0,0) 55%),
+                  linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,0));
+      pointer-events:none;
+    }
+    .hero-image{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display:grid;
+      place-items:center;
+      padding: 22px;
+    }
+    .hero-image img{
+      width: min(520px, 92%);
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      display:block;
+      filter: drop-shadow(0 22px 70px rgba(0,0,0,.55));
+    }
+    .hero-badges{
+      display:grid;
+      gap: 10px;
     }
     .mini{
       padding: 14px 14px;
@@ -325,26 +361,7 @@
       line-height: 1.45;
     }
 
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.14);
-      color: rgba(255,255,255,.86);
-      font-size: 12.5px;
-      line-height: 1;
-    }
-    .chip svg{ width: 15px; height: 15px; opacity:.9; }
-
+    /* Sections */
     .section{ margin-top: 18px; }
     .section-inner{ padding: 20px; }
     .section-title{
@@ -452,7 +469,9 @@
       transform: scale(1.02);
       filter: saturate(1.02) contrast(1.02);
     }
-    .imgcard .cap{ padding: 14px 14px 16px; }
+    .imgcard .cap{
+      padding: 14px 14px 16px;
+    }
     .imgcard .cap strong{
       display:block;
       margin-bottom: 6px;
@@ -556,9 +575,11 @@
       border-bottom: 1px solid rgba(255,255,255,.28);
     }
 
-    @media (max-width: 920px){
+    @media (max-width: 980px){
       .hero{ grid-template-columns: 1fr; }
-      .hero-right{ padding: 16px; }
+      .hero-media{ padding: 16px; }
+      .hero-image-box{ min-height: 380px; }
+      .hero-image img{ width: min(520px, 94%); max-height: 480px; }
       .steps{ grid-template-columns: 1fr; }
     }
     @media (max-width: 760px){
@@ -571,9 +592,9 @@
       .fab{ right: 14px; bottom: 14px; }
       footer{ padding-bottom: 96px; }
       .imgcard{ min-height: unset; }
-
-      /* HERO IMAGE BIGGER EN MOBILE (para que se note bien) */
-      .hero-avatar{ width: 96px; height: 96px; }
+      .hero-image-box{ min-height: 340px; }
+      .hero-image{ padding: 18px; }
+      .hero-image img{ width: 100%; max-height: 420px; }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -605,7 +626,7 @@
             </svg>
           </a>
 
-          <a class="icon-btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener" aria-label="WhatsApp">
+          <a class="icon-btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Akashicos." target="_blank" rel="noopener" aria-label="WhatsApp">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
             </svg>
@@ -622,16 +643,11 @@
 
       <section class="hero">
         <div class="panel hero-left">
-          <div class="hero-top">
-            <div class="hero-avatar" aria-hidden="true">
-              <img src="https://iili.io/fykaO4j.png" alt="Edith" />
-            </div>
-            <div class="kicker contrast">
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 3l2.2 6.7H21l-5.6 4.1L17.6 21 12 16.9 6.4 21l2.2-7.2L3 9.7h6.8L12 3z" stroke="currentColor" stroke-width="1.6"/>
-              </svg>
-              Lecturas 1:1 | Online | Confidencial
-            </div>
+          <div class="kicker contrast">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3l2.2 6.7H21l-5.6 4.1L17.6 21 12 16.9 6.4 21l2.2-7.2L3 9.7h6.8L12 3z" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+            Lecturas 1:1 | Online | Confidencial
           </div>
 
           <h1 class="contrast">Registros Akáshicos</h1>
@@ -665,9 +681,9 @@
           </div>
 
           <div class="hero-actions">
-            <a class="btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20una%20lectura%20de%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener">
+            <a class="btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20una%20lectura%20de%20Registros%20Akashicos." target="_blank" rel="noopener">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.430.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
               </svg>
               Consultar por WhatsApp
             </a>
@@ -685,18 +701,22 @@
           </div>
         </div>
 
-        <aside class="panel hero-right">
-          <div class="mini contrast">
-            <strong>Qué podés trabajar</strong>
-            <span>Decisiones, bloqueos, emociones repetidas, vínculos, propósito, dirección personal.</span>
+        <aside class="panel hero-media">
+          <div class="hero-image-box" aria-label="Imagen de Edith">
+            <div class="hero-image">
+              <img src="https://iili.io/fykaO4j.png" alt="Edith" />
+            </div>
           </div>
-          <div class="mini contrast">
-            <strong>Qué incluye</strong>
-            <span>Lectura 1:1 + preguntas guía + devolución clara para que te lleves dirección concreta.</span>
-          </div>
-          <div class="mini contrast">
-            <strong>Cómo se coordina</strong>
-            <span>Me escribís por WhatsApp o Instagram. Te digo disponibilidad y acordamos modalidad.</span>
+
+          <div class="hero-badges">
+            <div class="mini contrast">
+              <strong>Qué podés trabajar</strong>
+              <span>Decisiones, bloqueos, emociones repetidas, vínculos, propósito, dirección personal.</span>
+            </div>
+            <div class="mini contrast">
+              <strong>Qué incluye</strong>
+              <span>Lectura 1:1 + preguntas guía + devolución clara para que te lleves dirección concreta.</span>
+            </div>
           </div>
         </aside>
       </section>
@@ -750,49 +770,77 @@
 
       <section class="section panel">
         <div class="section-inner">
-          <h2 class="section-title contrast">Imágenes de referencia (para sumar valor)</h2>
-          <p class="section-desc contrast">Estas imágenes ilustran el contexto y la dinámica de una sesión online, el espacio de trabajo y el enfoque reflexivo del proceso.</p>
+          <h2 class="section-title contrast">Imágenes de referencia</h2>
+          <p class="section-desc contrast">Visuales para que se entienda el contexto: sesión online, espacio de trabajo y enfoque del proceso.</p>
 
           <div class="grid">
             <div class="imgcard col-6">
               <div class="media">
-                <img src="https://iili.io/fykXBAG.md.jpg" alt="Material de trabajo: péndulo, cristales y lámina de chakras" loading="lazy" />
+                <img src="https://freeimage.host/i/fykXBAG" alt="Herramientas y enfoque del trabajo" loading="lazy" />
               </div>
               <div class="cap">
-                <strong class="contrast">Herramientas y enfoque energético</strong>
-                <span class="contrast">Referencia visual de elementos que acompañan el trabajo: péndulo/cristales y guía de centros energéticos para ordenar la lectura.</span>
+                <strong class="contrast">Herramientas y enfoque</strong>
+                <span class="contrast">Referencia de elementos que acompañan el trabajo para ordenar la lectura y enfocar la consulta.</span>
               </div>
             </div>
 
             <div class="imgcard col-6">
               <div class="media">
-                <img src="https://iili.io/fykSc2R.md.jpg" alt="Videollamada en laptop: saludo al iniciar la sesión" loading="lazy" />
+                <img src="https://freeimage.host/i/fykSc2R" alt="Sesión online por videollamada" loading="lazy" />
               </div>
               <div class="cap">
-                <strong class="contrast">Sesión online (inicio y encuadre)</strong>
-                <span class="contrast">Referencia de una consulta por videollamada: se establece el tema, el objetivo y el encuadre para una lectura clara.</span>
+                <strong class="contrast">Sesión online</strong>
+                <span class="contrast">Referencia de una consulta por videollamada: encuadre, objetivo y enfoque para una lectura clara.</span>
               </div>
             </div>
 
             <div class="imgcard col-6">
               <div class="media">
-                <img src="https://iili.io/fykS0kN.md.png" alt="Persona escribiendo en cuaderno al atardecer (reflexión y notas)" loading="lazy" />
+                <img src="https://freeimage.host/i/fykS0kN" alt="Reflexión y registro" loading="lazy" />
               </div>
               <div class="cap">
                 <strong class="contrast">Reflexión y registro</strong>
-                <span class="contrast">La lectura se apoya en preguntas guía y en ordenar la información para que puedas llevarte claridad y pasos concretos.</span>
+                <span class="contrast">La lectura se apoya en preguntas guía y en ordenar la información para que sea aplicable.</span>
               </div>
             </div>
 
             <div class="imgcard col-6">
               <div class="media">
-                <img src="https://iili.io/fykSYrv.md.webp" alt="Consulta online: cliente frente a laptop con profesional en pantalla" loading="lazy" />
+                <img src="https://freeimage.host/i/fykSYrv" alt="Acompañamiento 1:1" loading="lazy" />
               </div>
               <div class="cap">
                 <strong class="contrast">Acompañamiento 1:1</strong>
-                <span class="contrast">Referencia de un espacio de acompañamiento individual: se escucha, se profundiza y se cierra la sesión con devolución.</span>
+                <span class="contrast">Referencia de un espacio individual: escucha, profundidad y cierre con devolución.</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section panel">
+        <div class="section-inner">
+          <h2 class="section-title contrast">Preguntas frecuentes</h2>
+
+          <div class="faq">
+            <details>
+              <summary class="contrast">¿Qué son los Registros Akáshicos?</summary>
+              <p class="contrast">Es una lectura orientada a brindar información y claridad para tu proceso personal, enfocada en tu mayor bien y evolución.</p>
+            </details>
+
+            <details>
+              <summary class="contrast">¿Cómo preparo mi consulta?</summary>
+              <p class="contrast">Te guío con preguntas simples para enfocar el tema. Si tenés un área específica (vínculos, decisiones, propósito), mejor.</p>
+            </details>
+
+            <details>
+              <summary class="contrast">¿La sesión es online?</summary>
+              <p class="contrast">Sí. Coordinamos por mensaje y definimos el formato para que te resulte cómodo.</p>
+            </details>
+
+            <details>
+              <summary class="contrast">¿Es confidencial?</summary>
+              <p class="contrast">Sí. La sesión es un espacio privado y cuidado.</p>
+            </details>
           </div>
         </div>
       </section>
@@ -800,12 +848,12 @@
       <section id="contacto" class="section panel cta-panel">
         <div class="left">
           <h2 class="contrast">¿Querés consultar?</h2>
-          <p class="contrast">Escribime por WhatsApp o Instagram. Te digo disponibilidad y coordinamos.</p>
+          <p class="contrast">Escribime por WhatsApp o Instagram y coordinamos.</p>
         </div>
         <div class="right" style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener">
+          <a class="btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Akashicos." target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.430.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
             </svg>
             WhatsApp
           </a>
@@ -833,9 +881,9 @@
     </div>
   </main>
 
-  <a class="fab" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <a class="fab" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Akashicos." target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.430.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.50-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
+      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
     </svg>
   </a>
 
