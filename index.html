@@ -11,7 +11,7 @@
   <meta property="og:title" content="Edith | Registros Akáshicos" />
   <meta property="og:description" content="Registros Akáshicos: claridad, guía y evolución. Consultas por WhatsApp o Instagram." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://iili.io/fyvjt71.png" />
+  <meta property="og:image" content="https://iili.io/qqKagig.jpg" />
   <meta property="og:locale" content="es_AR" />
 
   <meta name="theme-color" content="#0b0b10" />
@@ -37,7 +37,7 @@
     }
 
     *{ box-sizing:border-box; }
-    html, body { height:100%; }
+    html, body { min-height:100%; }
     body{
       margin:0;
       color: var(--txt);
@@ -188,7 +188,7 @@
       overflow:hidden;
     }
 
-    main{ padding: 18px 0 46px; }
+    main{ padding: 18px 0 28px; }
 
     .hero{
       margin-top: 14px;
@@ -365,7 +365,9 @@
       gap: 14px;
     }
     .col-4{ grid-column: span 4; }
+    .col-5{ grid-column: span 5; }
     .col-6{ grid-column: span 6; }
+    .col-7{ grid-column: span 7; }
     .col-12{ grid-column: span 12; }
 
     .card{
@@ -388,6 +390,38 @@
       color: rgba(255,255,255,.82);
       font-size: 13.5px;
       line-height: 1.6;
+    }
+
+    .who-card{
+      padding: 16px;
+      border-radius: 20px;
+      background: rgba(18, 20, 28, .42);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+      min-height: 100%;
+    }
+    .who-photo{
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      min-height: 100%;
+      box-shadow: 0 14px 50px rgba(0,0,0,.28);
+    }
+    .who-photo img{
+      width:100%;
+      height:100%;
+      min-height: 360px;
+      object-fit: cover;
+      display:block;
+    }
+    .who-points{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
     }
 
     .steps{
@@ -424,6 +458,100 @@
       color: rgba(255,255,255,.82);
       font-size: 13.5px;
       line-height: 1.6;
+    }
+
+    .reviews-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .review-card{
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(18, 20, 28, .42);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+      min-height: 180px;
+      display:flex;
+      flex-direction:column;
+      gap: 12px;
+    }
+    .review-head{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .review-avatar{
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      flex: 0 0 auto;
+    }
+    .review-avatar img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+    }
+    .review-meta{
+      min-width: 0;
+      display:flex;
+      flex-direction:column;
+      gap: 4px;
+    }
+    .review-meta strong{
+      font-size: 13.5px;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .review-meta span{
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+    .review-stars{
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,.88);
+    }
+    .review-text{
+      margin: 0;
+      color: rgba(255,255,255,.84);
+      font-size: 13.5px;
+      line-height: 1.65;
+      flex: 1;
+    }
+    .reviews-more{
+      margin-top: 16px;
+      display:flex;
+      justify-content:center;
+    }
+    .reviews-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.84);
+      font-size: 12.5px;
+      font-weight: 700;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .reviews-link:hover{
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.22);
+      transform: translateY(-1px);
     }
 
     .imgcard{
@@ -502,15 +630,21 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 18px 60px rgba(0,0,0,.45);
-      transition: transform .15s ease, background .15s ease;
+      transition: transform .15s ease, background .15s ease, opacity .2s ease, visibility .2s ease;
     }
     .fab:hover{
       transform: translateY(-2px);
       background: rgba(255,255,255,.18);
     }
     .fab svg{ width: 22px; height: 22px; }
+    .fab.is-hidden{
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(12px);
+    }
 
-    footer{ padding: 26px 0 90px; }
+    footer{ padding: 26px 0 0; }
     .footer-bar{
       padding: 14px 16px;
       border-radius: 18px;
@@ -531,12 +665,16 @@
     .credit a{
       font-weight: 900;
       border-bottom: 1px solid rgba(255,255,255,.28);
+      color: #ffffff;
     }
 
     @media (max-width: 920px){
       .hero{ grid-template-columns: 1fr; }
       .hero-right{ padding: 16px; }
       .steps{ grid-template-columns: 1fr; }
+      .reviews-grid{ grid-template-columns: repeat(2, 1fr); }
+      .col-5, .col-7{ grid-column: span 12; }
+      .who-photo img{ min-height: 280px; }
     }
     @media (max-width: 760px){
       header{ padding: 10px 0; }
@@ -546,9 +684,9 @@
       .hero-left{ padding: 20px 16px; }
       .btn{ width: 100%; justify-content:center; }
       .fab{ right: 14px; bottom: 14px; }
-      footer{ padding-bottom: 96px; }
       .imgcard{ min-height: unset; }
       .hero-avatar{ width: 96px; height: 96px; }
+      .reviews-grid{ grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -563,7 +701,7 @@
       <div class="header-bar">
         <div class="brand">
           <div class="brand-logo" aria-hidden="true">
-            <img src="https://iili.io/fyvjt71.png" alt="Edith" />
+            <img src="https://iili.io/qqKagig.jpg" alt="Edith" />
           </div>
           <div class="brand-text contrast">
             <strong>Edith</strong>
@@ -599,7 +737,7 @@
         <div class="panel hero-left">
           <div class="hero-top">
             <div class="hero-avatar" aria-hidden="true">
-              <img src="https://iili.io/fyvjt71.png" alt="Edith" />
+              <img src="https://iili.io/qqKagig.jpg" alt="Edith" />
             </div>
             <div class="kicker contrast">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -611,8 +749,8 @@
 
           <h1 class="contrast">Registros Akáshicos</h1>
           <p class="sub contrast">
-            Los Registros Akáshicos te informan lo que tu alma necesita saber para tu mayor bien y evolución.
-            Si necesitás claridad, guía y dirección, escribime y coordinamos.
+            Los Registros Akáshicos pueden brindarte claridad, comprensión y guía en momentos donde necesitás
+            ordenar lo que sentís y ver tu proceso con una mirada más profunda.
           </p>
 
           <div class="chips">
@@ -621,21 +759,21 @@
                 <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.6"/>
               </svg>
-              Duración: a coordinar
+              Lecturas 1:1
             </div>
             <div class="chip">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.6"/>
                 <path d="M9 17l-2 3h10l-2-3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
               </svg>
-              Modalidad: online
+              Modalidad online
             </div>
             <div class="chip">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M12 2l8 4v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.6"/>
                 <path d="M9.5 12l1.8 1.8L15.5 9.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              Confidencial
+              Espacio confidencial
             </div>
           </div>
 
@@ -678,21 +816,49 @@
 
       <section class="section panel">
         <div class="section-inner">
+          <div class="grid">
+            <div class="col-5">
+              <div class="who-photo">
+                <img src="https://iili.io/qqK0MxI.png" alt="Edith acompañando desde un espacio genuino y cercano" loading="lazy" />
+              </div>
+            </div>
+            <div class="col-7">
+              <div class="who-card">
+                <h2 class="section-title contrast">Quién te acompaña</h2>
+                <p class="section-desc contrast">
+                  Detrás de cada lectura hay una persona que busca acompañarte desde la escucha, el respeto y una intención genuina de brindarte claridad.
+                  Más que una sesión, la propuesta es ofrecerte un espacio cuidado donde puedas comprender mejor tu proceso, ordenar lo que hoy te sucede
+                  y recibir orientación con calma y presencia.
+                </p>
+
+                <div class="who-points">
+                  <div class="chip">Escucha genuina</div>
+                  <div class="chip">Acompañamiento humano</div>
+                  <div class="chip">Claridad para tu proceso</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section panel">
+        <div class="section-inner">
           <h2 class="section-title contrast">¿Para quién es?</h2>
           <p class="section-desc contrast">Para momentos donde necesitás claridad real, ordenar emociones y avanzar con dirección.</p>
 
           <div class="grid">
             <div class="card col-4">
-              <h3 class="contrast">Decisiones</h3>
-              <p class="contrast">Cuando sentís que estás entre opciones y querés ver con más claridad el camino.</p>
+              <h3 class="contrast">¿Qué son los Registros Akáshicos?</h3>
+              <p class="contrast">Son un espacio de conexión y comprensión que puede ayudarte a observar con más claridad aspectos de tu camino, tus emociones, tus vínculos o situaciones que hoy necesitás ordenar.</p>
             </div>
             <div class="card col-4">
-              <h3 class="contrast">Patrones</h3>
-              <p class="contrast">Si repetís situaciones o vínculos y querés entender el aprendizaje de fondo.</p>
+              <h3 class="contrast">¿Cómo funciona una lectura?</h3>
+              <p class="contrast">La consulta se coordina previamente y se enfoca en aquello que hoy necesitás trabajar. Durante la lectura se abre un espacio de escucha y conexión orientado a brindarte guía y claridad.</p>
             </div>
             <div class="card col-4">
-              <h3 class="contrast">Dirección</h3>
-              <p class="contrast">Para ordenar mente y emociones y tomar decisiones con más tranquilidad.</p>
+              <h3 class="contrast">¿Para qué puede ayudarte?</h3>
+              <p class="contrast">Puede ayudarte a ordenar emociones, comprender procesos, reconocer patrones y atravesar tu momento con una mirada más consciente y tranquila.</p>
             </div>
           </div>
         </div>
@@ -723,49 +889,180 @@
         </div>
       </section>
 
+      <section class="section panel" id="opiniones">
+        <div class="section-inner">
+          <h2 class="section-title contrast">Opiniones de quienes ya consultaron</h2>
+          <p class="section-desc contrast">Comentarios y experiencias compartidas en Instagram por personas que ya vivieron su proceso de lectura.</p>
+
+          <div class="reviews-grid">
+            <article class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">
+                  <img src="https://iili.io/qq3jIRa.jpg" alt="Foto de perfil de sanar_te.revistaholistica" loading="lazy" />
+                </div>
+                <div class="review-meta">
+                  <strong class="contrast">sanar_te.revistaholistica</strong>
+                  <span class="contrast">Comentario de Instagram</span>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text contrast">Una gran canalizadora. Excelente experiencia. Muy recomendable.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">
+                  <img src="https://iili.io/qq3joUF.jpg" alt="Foto de perfil de adrianababuini" loading="lazy" />
+                </div>
+                <div class="review-meta">
+                  <strong class="contrast">adrianababuini</strong>
+                  <span class="contrast">Comentario de Instagram</span>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text contrast">Muy linda experiencia y un espacio compartido con calidez, presencia y claridad.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">
+                  <img src="https://iili.io/qq3joUF.jpg" alt="Foto de perfil de adrianababuini" loading="lazy" />
+                </div>
+                <div class="review-meta">
+                  <strong class="contrast">adrianababuini</strong>
+                  <span class="contrast">Comentario de Instagram</span>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text contrast">Acompañamiento amoroso y una lectura que ayudó a ver el proceso con más tranquilidad.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">
+                  <img src="https://iili.io/qq3jCKP.jpg" alt="Foto de perfil de incarnatoliliana" loading="lazy" />
+                </div>
+                <div class="review-meta">
+                  <strong class="contrast">incarnatoliliana</strong>
+                  <span class="contrast">Comentario de Instagram</span>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text contrast">Una experiencia compartida con sensibilidad y mucha claridad para transitar el momento.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">
+                  <img src="https://iili.io/qq3jnl1.jpg" alt="Foto de perfil de andymass16" loading="lazy" />
+                </div>
+                <div class="review-meta">
+                  <strong class="contrast">andymass16</strong>
+                  <span class="contrast">Comentario de Instagram</span>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text contrast">Muy recomendable por la manera de escuchar, acompañar y brindar una devolución clara.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">
+                  <img src="https://iili.io/qq3jzHg.jpg" alt="Foto de perfil de jorgeluisspartano" loading="lazy" />
+                </div>
+                <div class="review-meta">
+                  <strong class="contrast">jorgeluisspartano</strong>
+                  <span class="contrast">Comentario de Instagram</span>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text contrast">Un espacio genuino, claro y respetuoso que ayuda a ordenar lo que uno está viviendo.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">
+                  <img src="https://iili.io/qq3jqiB.jpg" alt="Foto de perfil de bloom.artenatural" loading="lazy" />
+                </div>
+                <div class="review-meta">
+                  <strong class="contrast">bloom.artenatural</strong>
+                  <span class="contrast">Comentario de Instagram</span>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text contrast">Hermosa experiencia y una lectura hecha con mucha dedicación, respeto y presencia.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">
+                  <img src="https://iili.io/qq3jTOJ.jpg" alt="Foto de perfil de taniacifuentes55" loading="lazy" />
+                </div>
+                <div class="review-meta">
+                  <strong class="contrast">taniacifuentes55</strong>
+                  <span class="contrast">Comentario de Instagram</span>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text contrast">Aporta comprensión y mucha calma para quienes necesitan claridad en su proceso personal.</p>
+            </article>
+
+            <article class="review-card">
+              <div class="review-head">
+                <div class="review-avatar">
+                  <img src="https://iili.io/qq3SlA7.jpg" alt="Foto de perfil de caty.costa.m" loading="lazy" />
+                </div>
+                <div class="review-meta">
+                  <strong class="contrast">caty.costa.m</strong>
+                  <span class="contrast">Comentario de Instagram</span>
+                  <div class="review-stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="review-text contrast">Una consulta compartida con calidez y una mirada profunda que ayuda a ver con más claridad.</p>
+            </article>
+          </div>
+
+          <div class="reviews-more">
+            <a class="reviews-link" href="https://instagram.com/akashicos.emdm" target="_blank" rel="noopener">
+              Ver más en Instagram
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section class="section panel">
         <div class="section-inner">
           <h2 class="section-title contrast">Galería</h2>
-          <p class="section-desc contrast">Un vistazo del contexto de sesión, herramientas y dinámica de trabajo.</p>
+          <p class="section-desc contrast">Un vistazo del contexto de sesión, acompañamiento y dinámica de trabajo.</p>
 
           <div class="grid">
-            <div class="imgcard col-6">
-              <div class="media">
-                <img src="https://iili.io/fykXBAG.md.jpg" alt="Material de trabajo: péndulo, cristales y lámina de chakras" loading="lazy" />
-              </div>
-              <div class="cap">
-                <strong class="contrast">Herramientas y enfoque energético</strong>
-                <span class="contrast">Elementos que pueden acompañar el trabajo: péndulo/cristales y guía de centros energéticos para ordenar la lectura.</span>
-              </div>
-            </div>
-
-            <div class="imgcard col-6">
+            <div class="imgcard col-4">
               <div class="media">
                 <img src="https://iili.io/fykSc2R.md.jpg" alt="Videollamada en laptop: saludo al iniciar la sesión" loading="lazy" />
               </div>
               <div class="cap">
                 <strong class="contrast">Sesión online</strong>
-                <span class="contrast">Consulta por videollamada: se define el tema y el objetivo para una lectura clara y útil.</span>
+                <span class="contrast">Consulta por videollamada: se define el tema y el objetivo para una lectura clara, cercana y útil.</span>
               </div>
             </div>
 
-            <div class="imgcard col-6">
+            <div class="imgcard col-4">
               <div class="media">
-                <img src="https://iili.io/fykS0kN.md.png" alt="Persona escribiendo en cuaderno al atardecer (reflexión y notas)" loading="lazy" />
+                <img src="https://iili.io/fykS0kN.md.png" alt="Persona escribiendo en cuaderno al atardecer" loading="lazy" />
               </div>
               <div class="cap">
                 <strong class="contrast">Reflexión y registro</strong>
-                <span class="contrast">La lectura se apoya en preguntas guía y en ordenar la información para que te lleves claridad y pasos concretos.</span>
+                <span class="contrast">La lectura también invita a ordenar la información y quedarte con una comprensión más profunda de tu momento actual.</span>
               </div>
             </div>
 
-            <div class="imgcard col-6">
+            <div class="imgcard col-4">
               <div class="media">
-                <img src="https://iili.io/fy8nZps.jpg" alt="Acompañamiento 1:1 en sesión (imagen)" loading="lazy" />
+                <img src="https://iili.io/fy8nZps.jpg" alt="Acompañamiento 1:1 en sesión" loading="lazy" />
               </div>
               <div class="cap">
                 <strong class="contrast">Acompañamiento 1:1</strong>
-                <span class="contrast">Referencia de un espacio de acompañamiento individual: se escucha, se profundiza y se cierra la sesión con devolución.</span>
+                <span class="contrast">Un espacio individual donde se escucha, se profundiza y se busca una devolución clara y respetuosa para tu proceso.</span>
               </div>
             </div>
           </div>
@@ -780,7 +1077,7 @@
         <div class="right" style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.430.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.430.05-.197-.1-.833-.307-1.587-.98-.586-.522-.980-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
             </svg>
             WhatsApp
           </a>
@@ -796,7 +1093,7 @@
         </div>
       </section>
 
-      <footer>
+      <footer id="site-footer">
         <div class="footer-bar">
           <small class="contrast">© <span id="year"></span> Edith | Registros Akáshicos</small>
           <small class="credit contrast">
@@ -808,14 +1105,15 @@
     </div>
   </main>
 
-  <a class="fab" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <a class="fab" id="fab-whatsapp" href="https://wa.me/?text=Hola%20Edith%2C%20quiero%20consultarte%20por%20Registros%20Ak%C3%A1shicos." target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
-      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.430.05-.197-.1-.833-.307-1.587-.98-.586-.522-.98-1.17-1.095-1.368-.114-.197-.012-.304 .087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86 .114-.943-.05-.084-.182-.133-.38-.232z"/>
+      <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.35-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.501c.002-3.626 2.957-6.58 6.585-6.58a6.54 6.54 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.92 4.67c-.002 3.626-2.957 6.58-6.584 6.58zm3.61-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.430.05-.197-.1-.833-.307-1.587-.98-.586-.522-.980-1.17-1.095-1.368-.114-.197-.012-.304.087-.403.089-.088.197-.232.296-.346.1-.114.133-.197.197-.33.065-.133.033-.247-.016-.346-.05-.099-.445-1.076-.612-1.47-.16-.384-.323-.332-.445-.338l-.38-.007c-.133 0-.346.05-.528.247-.182.197-.693.678-.693 1.65 0 .97.71 1.91.81 2.043.099.133 1.394 2.13 3.38 2.987.472.204.84.326 1.129.417.474.15.904.129 1.246.079.38-.057 1.17-.479 1.335-.943.165-.464.165-.86.114-.943-.05-.084-.182-.133-.38-.232z"/>
     </svg>
   </a>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
     document.addEventListener("click", function(e){
       const a = e.target.closest('a[href^="#"]');
       if(!a) return;
@@ -826,6 +1124,22 @@
       e.preventDefault();
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }, { passive: false });
+
+    const fab = document.getElementById("fab-whatsapp");
+    const footer = document.getElementById("site-footer");
+
+    if ("IntersectionObserver" in window && fab && footer) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          fab.classList.toggle("is-hidden", entry.isIntersecting);
+        });
+      }, {
+        root: null,
+        threshold: 0.15
+      });
+
+      observer.observe(footer);
+    }
   </script>
 </body>
 </html>
