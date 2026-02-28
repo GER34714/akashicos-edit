@@ -51,6 +51,7 @@
     }
 
     a{ color: inherit; text-decoration:none; }
+    button{ font: inherit; }
     .wrap{
       width: min(var(--max), calc(100% - (var(--pad) * 2)));
       margin: 0 auto;
@@ -149,7 +150,8 @@
       transform: translateY(-1px);
       border-color: rgba(255,255,255,.24);
     }
-    .icon-btn:focus-visible{
+    .icon-btn:focus-visible,
+    .reviews-link:focus-visible{
       outline: 2px solid var(--focus);
       outline-offset: 3px;
     }
@@ -173,10 +175,6 @@
       transform: translateY(-1px);
       border-color: rgba(255,255,255,.28);
     }
-    .cta:focus-visible{
-      outline: 2px solid var(--focus);
-      outline-offset: 3px;
-    }
 
     .panel{
       border-radius: var(--radius);
@@ -195,7 +193,7 @@
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap: 18px;
-      align-items: stretch;
+      align-items: start;
     }
 
     .hero-left{
@@ -245,7 +243,7 @@
       font-size: clamp(28px, 3.8vw, 46px);
       line-height: 1.05;
       letter-spacing: -0.6px;
-      max-width: 11ch;
+      max-width: 10ch;
     }
     .sub{
       margin: 0;
@@ -285,10 +283,6 @@
       transform: translateY(-1px);
       border-color: rgba(255,255,255,.28);
     }
-    .btn:focus-visible{
-      outline: 2px solid var(--focus);
-      outline-offset: 3px;
-    }
     .btn svg{ width: 18px; height: 18px; }
 
     .btn.secondary{
@@ -305,6 +299,7 @@
       display:flex;
       flex-direction:column;
       gap: 12px;
+      align-self: start;
     }
     .mini{
       padding: 14px 14px;
@@ -364,6 +359,7 @@
       display:grid;
       grid-template-columns: repeat(12, 1fr);
       gap: 14px;
+      align-items: start;
     }
     .col-4{ grid-column: span 4; }
     .col-5{ grid-column: span 5; }
@@ -394,29 +390,39 @@
     }
 
     .who-card{
-      padding: 16px;
+      padding: 18px;
       border-radius: 20px;
       background: rgba(18, 20, 28, .42);
       border: 1px solid rgba(255,255,255,.14);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       box-shadow: 0 12px 40px rgba(0,0,0,.25);
-      min-height: 100%;
+      align-self: start;
+      height: auto;
+    }
+    .who-card .section-title{
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .who-card .section-desc{
+      margin-bottom: 0;
+      max-width: 58ch;
+      font-size: 15px;
+      line-height: 1.7;
     }
     .who-photo{
       border-radius: 18px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.05);
-      min-height: 100%;
       box-shadow: 0 14px 50px rgba(0,0,0,.28);
+      align-self: start;
     }
     .who-photo img{
       width:100%;
-      height:100%;
-      min-height: 360px;
-      object-fit: cover;
+      height:auto;
       display:block;
+      object-fit: cover;
     }
     .who-points{
       display:flex;
@@ -466,6 +472,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 14px;
       margin-top: 10px;
+      align-items: start;
     }
     .review-card{
       padding: 16px;
@@ -560,6 +567,9 @@
       background: rgba(255,255,255,.14);
       border-color: rgba(255,255,255,.22);
       transform: translateY(-1px);
+    }
+    .reviews-link.is-hidden{
+      display:none;
     }
 
     .imgcard{
@@ -682,7 +692,7 @@
       .steps{ grid-template-columns: 1fr; }
       .reviews-grid{ grid-template-columns: repeat(2, 1fr); }
       .col-5, .col-7{ grid-column: span 12; }
-      .who-photo img{ min-height: 280px; }
+      .who-card .section-desc{ max-width: 100%; }
     }
     @media (max-width: 760px){
       header{ padding: 10px 0; }
@@ -695,7 +705,20 @@
       .imgcard{ min-height: unset; }
       .hero-avatar{ width: 96px; height: 96px; }
       .reviews-grid{ grid-template-columns: 1fr; }
-      h1{ max-width: 100%; }
+      h1{
+        max-width: 100%;
+        font-size: clamp(28px, 8vw, 38px);
+      }
+      .sub{
+        font-size: 15px;
+      }
+      .who-card{
+        padding: 16px;
+      }
+      .who-card .section-desc{
+        font-size: 14.5px;
+        line-height: 1.65;
+      }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -1161,7 +1184,6 @@
 
       if (visibleReviews < 9) {
         reviewsMoreBtn.classList.remove("is-hidden");
-        reviewsMoreBtn.textContent = visibleReviews === 3 ? "Ver más opiniones" : "Ver más opiniones";
       } else {
         reviewsMoreBtn.classList.add("is-hidden");
       }
