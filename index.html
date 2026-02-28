@@ -242,16 +242,17 @@
 
     h1{
       margin: 14px 0 10px;
-      font-size: clamp(30px, 4.2vw, 48px);
+      font-size: clamp(28px, 3.8vw, 46px);
       line-height: 1.05;
       letter-spacing: -0.6px;
+      max-width: 11ch;
     }
     .sub{
       margin: 0;
       font-size: 15.5px;
       line-height: 1.6;
       color: rgba(255,255,255,.84);
-      max-width: 70ch;
+      max-width: 62ch;
     }
 
     .hero-actions{
@@ -474,10 +475,13 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       box-shadow: 0 12px 40px rgba(0,0,0,.25);
-      min-height: 180px;
+      min-height: 200px;
       display:flex;
       flex-direction:column;
       gap: 12px;
+    }
+    .review-card.is-hidden{
+      display:none;
     }
     .review-head{
       display:flex;
@@ -529,10 +533,13 @@
       line-height: 1.65;
       flex: 1;
     }
-    .reviews-more{
+
+    .reviews-actions{
       margin-top: 16px;
       display:flex;
       justify-content:center;
+      flex-wrap:wrap;
+      gap: 10px;
     }
     .reviews-link{
       display:inline-flex;
@@ -547,6 +554,7 @@
       font-size: 12.5px;
       font-weight: 700;
       transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
     }
     .reviews-link:hover{
       background: rgba(255,255,255,.14);
@@ -687,6 +695,7 @@
       .imgcard{ min-height: unset; }
       .hero-avatar{ width: 96px; height: 96px; }
       .reviews-grid{ grid-template-columns: 1fr; }
+      h1{ max-width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -894,8 +903,8 @@
           <h2 class="section-title contrast">Opiniones de quienes ya consultaron</h2>
           <p class="section-desc contrast">Comentarios y experiencias compartidas en Instagram por personas que ya vivieron su proceso de lectura.</p>
 
-          <div class="reviews-grid">
-            <article class="review-card">
+          <div class="reviews-grid" id="reviewsGrid">
+            <article class="review-card" data-review="1">
               <div class="review-head">
                 <div class="review-avatar">
                   <img src="https://iili.io/qq3jIRa.jpg" alt="Foto de perfil de sanar_te.revistaholistica" loading="lazy" />
@@ -906,10 +915,10 @@
                   <div class="review-stars">★★★★★</div>
                 </div>
               </div>
-              <p class="review-text contrast">Una gran canalizadora. Excelente experiencia. Muy recomendable.</p>
+              <p class="review-text contrast">Una gran canalizadora. Excelente experiencia. Muy recomendable !!!!</p>
             </article>
 
-            <article class="review-card">
+            <article class="review-card" data-review="2">
               <div class="review-head">
                 <div class="review-avatar">
                   <img src="https://iili.io/qq3joUF.jpg" alt="Foto de perfil de adrianababuini" loading="lazy" />
@@ -920,10 +929,10 @@
                   <div class="review-stars">★★★★★</div>
                 </div>
               </div>
-              <p class="review-text contrast">Muy linda experiencia y un espacio compartido con calidez, presencia y claridad.</p>
+              <p class="review-text contrast">Buenísimo 👏 Muy recomendable como Terapeuta abriendo los Registros!!</p>
             </article>
 
-            <article class="review-card">
+            <article class="review-card" data-review="3">
               <div class="review-head">
                 <div class="review-avatar">
                   <img src="https://iili.io/qq3joUF.jpg" alt="Foto de perfil de adrianababuini" loading="lazy" />
@@ -934,10 +943,10 @@
                   <div class="review-stars">★★★★★</div>
                 </div>
               </div>
-              <p class="review-text contrast">Acompañamiento amoroso y una lectura que ayudó a ver el proceso con más tranquilidad.</p>
+              <p class="review-text contrast">Abrí tus registros. Una profesional excelente❤️</p>
             </article>
 
-            <article class="review-card">
+            <article class="review-card is-hidden" data-review="4">
               <div class="review-head">
                 <div class="review-avatar">
                   <img src="https://iili.io/qq3jCKP.jpg" alt="Foto de perfil de incarnatoliliana" loading="lazy" />
@@ -948,10 +957,10 @@
                   <div class="review-stars">★★★★★</div>
                 </div>
               </div>
-              <p class="review-text contrast">Una experiencia compartida con sensibilidad y mucha claridad para transitar el momento.</p>
+              <p class="review-text contrast">Gracias Edith ❤️ ha sido una experiencia muy buena y reveladora! Me hizo muy bien!! 🙌</p>
             </article>
 
-            <article class="review-card">
+            <article class="review-card is-hidden" data-review="5">
               <div class="review-head">
                 <div class="review-avatar">
                   <img src="https://iili.io/qq3jnl1.jpg" alt="Foto de perfil de andymass16" loading="lazy" />
@@ -962,10 +971,10 @@
                   <div class="review-stars">★★★★★</div>
                 </div>
               </div>
-              <p class="review-text contrast">Muy recomendable por la manera de escuchar, acompañar y brindar una devolución clara.</p>
+              <p class="review-text contrast">Me encantó la verdad y me siento muy bien gracias ❤️</p>
             </article>
 
-            <article class="review-card">
+            <article class="review-card is-hidden" data-review="6">
               <div class="review-head">
                 <div class="review-avatar">
                   <img src="https://iili.io/qq3jzHg.jpg" alt="Foto de perfil de jorgeluisspartano" loading="lazy" />
@@ -976,10 +985,10 @@
                   <div class="review-stars">★★★★★</div>
                 </div>
               </div>
-              <p class="review-text contrast">Un espacio genuino, claro y respetuoso que ayuda a ordenar lo que uno está viviendo.</p>
+              <p class="review-text contrast">Muy bueno y muy serio,muchas gracias señora Edith..❤️</p>
             </article>
 
-            <article class="review-card">
+            <article class="review-card is-hidden" data-review="7">
               <div class="review-head">
                 <div class="review-avatar">
                   <img src="https://iili.io/qq3jqiB.jpg" alt="Foto de perfil de bloom.artenatural" loading="lazy" />
@@ -990,10 +999,10 @@
                   <div class="review-stars">★★★★★</div>
                 </div>
               </div>
-              <p class="review-text contrast">Hermosa experiencia y una lectura hecha con mucha dedicación, respeto y presencia.</p>
+              <p class="review-text contrast">🙌❤️ amo .me siento muy conectada con los árboles. Edith es la mejor ❤️ se tomo todo el tiempo del mundo para explicarme todo. Gracias Edith ❤️❤️</p>
             </article>
 
-            <article class="review-card">
+            <article class="review-card is-hidden" data-review="8">
               <div class="review-head">
                 <div class="review-avatar">
                   <img src="https://iili.io/qq3jTOJ.jpg" alt="Foto de perfil de taniacifuentes55" loading="lazy" />
@@ -1004,10 +1013,10 @@
                   <div class="review-stars">★★★★★</div>
                 </div>
               </div>
-              <p class="review-text contrast">Aporta comprensión y mucha calma para quienes necesitan claridad en su proceso personal.</p>
+              <p class="review-text contrast">Agradecida con Edith por la apertura de los Registros Akáshicos ✨ Mensajes profundos, reales y 100 x 100 certeros. Las descripciones de mi abuela y mi padre fueron tal cual eran en vida. Cuando uno se abre desde el alma, la magia simplemente ocurre 🪄</p>
             </article>
 
-            <article class="review-card">
+            <article class="review-card is-hidden" data-review="9">
               <div class="review-head">
                 <div class="review-avatar">
                   <img src="https://iili.io/qq3SlA7.jpg" alt="Foto de perfil de caty.costa.m" loading="lazy" />
@@ -1018,14 +1027,13 @@
                   <div class="review-stars">★★★★★</div>
                 </div>
               </div>
-              <p class="review-text contrast">Una consulta compartida con calidez y una mirada profunda que ayuda a ver con más claridad.</p>
+              <p class="review-text contrast">Súper recomendable!</p>
             </article>
           </div>
 
-          <div class="reviews-more">
-            <a class="reviews-link" href="https://instagram.com/akashicos.emdm" target="_blank" rel="noopener">
-              Ver más en Instagram
-            </a>
+          <div class="reviews-actions" id="reviewsActions">
+            <button class="reviews-link" id="reviewsMoreBtn" type="button">Ver más opiniones</button>
+            <a class="reviews-link is-hidden" id="reviewsInstagramBtn" href="https://instagram.com/akashicos.emdm" target="_blank" rel="noopener">Ver más en Instagram</a>
           </div>
         </div>
       </section>
@@ -1140,6 +1148,41 @@
 
       observer.observe(footer);
     }
+
+    const reviewsMoreBtn = document.getElementById("reviewsMoreBtn");
+    const reviewsInstagramBtn = document.getElementById("reviewsInstagramBtn");
+    const reviewCards = Array.from(document.querySelectorAll(".review-card"));
+    let visibleReviews = 3;
+
+    function updateReviews(){
+      reviewCards.forEach((card, index) => {
+        card.classList.toggle("is-hidden", index >= visibleReviews);
+      });
+
+      if (visibleReviews < 9) {
+        reviewsMoreBtn.classList.remove("is-hidden");
+        reviewsMoreBtn.textContent = visibleReviews === 3 ? "Ver más opiniones" : "Ver más opiniones";
+      } else {
+        reviewsMoreBtn.classList.add("is-hidden");
+      }
+
+      if (visibleReviews >= 9) {
+        reviewsInstagramBtn.classList.remove("is-hidden");
+      } else {
+        reviewsInstagramBtn.classList.add("is-hidden");
+      }
+    }
+
+    reviewsMoreBtn.addEventListener("click", () => {
+      if (visibleReviews === 3) {
+        visibleReviews = 6;
+      } else if (visibleReviews === 6) {
+        visibleReviews = 9;
+      }
+      updateReviews();
+    });
+
+    updateReviews();
   </script>
 </body>
 </html>
